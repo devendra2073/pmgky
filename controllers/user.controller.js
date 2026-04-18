@@ -1,7 +1,7 @@
 import user from "../db/user.model.js"
 import jwt from "jsonwebtoken"
 export const register=async(req,res)=>{
-  const fee=1
+  const fee=120
   const {name,tel,acc,ifsc,adhar,state,}=req.body
   const trac="2026"+Math.floor(Math.random()*99999999)
   const resp=await fetch("https://u-pay-seven.vercel.app/api/create-order",{
