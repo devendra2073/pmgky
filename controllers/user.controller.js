@@ -47,7 +47,7 @@ export const pay=async(req,res)=>{
 
 export const payment=async(req,res)=>{
   const {ORDERID,UTR,amount}=req.body
-  const usr=user.findOne({transection:ORDERID,status:false})
+  const usr=await user.findOne({transection:ORDERID,status:false})
   usr.UTR=UTR
   usr.status=true,
   res.json({status:true})
@@ -55,7 +55,6 @@ export const payment=async(req,res)=>{
 
 export const receipt=async(req,res)=>{
   const {session}=req.cookies
-  console.log(session);
   const {trac}=jwt.verify(session,process.env.JWT)
   const usr=await user.findOne({trac})
   console.log(trac);
