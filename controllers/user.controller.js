@@ -50,6 +50,7 @@ export const payment=async(req,res)=>{
   const usr=await user.findOne({transection:ORDERID,status:false})
   usr.UTR=UTR
   usr.status=true,
+  await usr.save()
   res.json({status:true})
 }
 
